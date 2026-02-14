@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>3D Audio Layer Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Import Map for Three.js and GUI -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://esm.sh/three@0.160.0",
+                "three/addons/": "https://esm.sh/three@0.160.0/examples/jsm/",
+                "lil-gui": "https://esm.sh/lil-gui@0.19.1"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <!-- UI Overlay -->
+    <div id="ui-layer">
+        <div class="panel">
+            <h1>Audio Visualizer</h1>
+            <p class="subtitle">Upload audio stems to begin</p>
+            
+            <div class="controls">
+                <label for="file-input" class="btn primary-btn">
+                    Upload Audio Parts (Select Multiple)
+                </label>
+                <input type="file" id="file-input" accept="audio/*" multiple style="display: none;">
+                
+                <div id="playback-controls" class="hidden">
+                    <button id="play-btn" class="btn">Play</button>
+                    <button id="stop-btn" class="btn">Stop</button>
+                </div>
+            </div>
+            <div id="status-text">Waiting for audio...</div>
+        </div>
+    </div>
+
+    <!-- Main Entry Point -->
+    <script type="module" src="./js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
